@@ -28,7 +28,7 @@ const PlayerSelection = () => {
         const fetchJackpotDetails = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch(`https://pick-cric.vercel.app/api/getJackpotById/${jackpotId}`);
+                const response = await fetch(`https://pickcric.onrender.com/api/getJackpotById/${jackpotId}`);
                 const result = await response.json();
 
                 if (result.success && result.data) {

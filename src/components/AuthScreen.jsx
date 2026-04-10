@@ -45,7 +45,7 @@ const AuthScreen = () => {
       setIsLoading(true);
       try {
           // Replace URL with your actual backend URL/Port
-          const response = await fetch('https://pick-cric.vercel.app/api/auth/login', {
+          const response = await fetch('https://pickcric.onrender.com/api/auth/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ emailOrUsername: loginId, password: loginPassword })
@@ -71,7 +71,7 @@ const AuthScreen = () => {
       e.preventDefault();
       setIsLoading(true);
       try {
-          const response = await fetch('https://pick-cric.vercel.app/api/auth/send-otp', {
+          const response = await fetch('https://pickcric.onrender.com/api/auth/send-otp', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email })
@@ -95,7 +95,7 @@ const AuthScreen = () => {
       e.preventDefault();
       setIsLoading(true);
       try {
-          const response = await fetch('https://pick-cric.vercel.app/api/auth/register', {
+          const response = await fetch('https://pickcric.onrender.com/api/auth/register', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email, username, password, otp })
