@@ -26,7 +26,7 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         // Note: Ensure your backend has CORS enabled if running on a different port!
-        const response = await fetch('http://localhost:8003/api/getLiveJackpots'); 
+        const response = await fetch('https://pick-cric.vercel.app/api/getLiveJackpots'); 
         const result = await response.json();
 
         if (result.success) {

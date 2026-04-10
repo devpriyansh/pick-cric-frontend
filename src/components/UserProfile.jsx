@@ -13,7 +13,7 @@ const UserProfile = () => {
       try {
         const token = localStorage.getItem('pickcric_token');
         
-        const response = await fetch('http://localhost:8003/api/users/profile', {
+        const response = await fetch('https://pickcric.onrender.com/api/users/profile', {
           headers: {
             'Authorization': `Bearer ${token}` // Send the token to the middleware!
           }
