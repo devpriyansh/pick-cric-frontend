@@ -114,7 +114,7 @@ const PlayerSelection = () => {
                 selectedPlayers: selectedPlayers
             };
 
-            const response = await fetch('http://localhost:8003/api/contests/submit', {
+            const response = await fetch('https://pickcric.onrender.com/api/contests/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
