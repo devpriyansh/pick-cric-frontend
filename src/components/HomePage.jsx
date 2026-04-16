@@ -134,34 +134,34 @@ const HomePage = () => {
             </div>
           ) : (
             // Find this section inside your HomePage.jsx map function:
-jackpots.map((match, idx) => (
-  <motion.div 
-     key={match.id}
-     initial={{ opacity: 0, y: 30 }}
-     animate={{ opacity: 1, y: 0 }}
-     transition={{ delay: idx * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-     
-     // ✅ THE FIX: Check the time before allowing navigation!
-     onClick={() => {
-        const now = new Date().getTime();
-        const endTime = new Date(match.endDate).getTime();
-        
-        if (now < endTime) {
-            // It is still live, allow navigation
-            navigate(`/select-players/${match.id}`, { state: match.rawDbData });
-        } else {
-            // It is expired! Do not navigate. You can also show a toast message here.
-            alert("This jackpot has closed!");
-        }
-     }}
-     
-     className="cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] rounded-3xl group"
-  >
-     <div className="h-full group-hover:ring-1 group-hover:ring-neon-green/30 rounded-3xl transition-all">
-        <JackpotCard match={match} />
-     </div>
-  </motion.div>
-))
+          jackpots.map((match, idx) => (
+            <motion.div 
+              key={match.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              
+              // ✅ THE FIX: Check the time before allowing navigation!
+              onClick={() => {
+                  const now = new Date().getTime();
+                  const endTime = new Date(match.endDate).getTime();
+                  
+                  if (now < endTime) {
+                      // It is still live, allow navigation
+                      navigate(`/select-players/${match.id}`, { state: match.rawDbData });
+                  } else {
+                      // It is expired! Do not navigate. You can also show a toast message here.
+                      alert("This jackpot has closed!");
+                  }
+              }}
+              
+              className="cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] rounded-3xl group"
+            >
+              <div className="h-full group-hover:ring-1 group-hover:ring-neon-green/30 rounded-3xl transition-all">
+                  <JackpotCard match={match} />
+              </div>
+            </motion.div>
+          ))
           )}
         </div>
       </div>
